@@ -15,7 +15,6 @@ RUN curl -OsS https://bootstrap.pypa.io/get-pip.py \
  && versions="2.6 3.2 3.3" \
  && for version in $versions; do \
       eval python$version get-pip.py && \
-#      mv /usr/local/bin/easy_install /usr/local/bin/easy_install$version; \
       mv /usr/local/bin/wheel /usr/local/bin/wheel$version; \
     done \
  && rm get-pip.py \
