@@ -1,15 +1,29 @@
 FROM ubuntu
 
-ENV PYTHONS="python2.3 python2.4 python2.5 python2.6 python2.7 python3.1 python3.2 python3.3 python3.4 pypy"
+ENV PYTHONS="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3.3 python3.4 pypy"
 
 RUN apt-get -q update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -qy \
         curl jupp nano vim software-properties-common \
+        gcc libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev make zlib1g-dev \
  && add-apt-repository -y ppa:fkrull/deadsnakes \
+ && apt-get purge -qy software-properties-common \
  && apt-get -q update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -qy $PYTHONS \
+ && apt-get autoremove -qy \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+
+ RUN version=2.7.10 \
+  && curl -sOLS "https://www.python.org/ftp/python/${version}/Python-$version.tar.xz" \
+  && tar xf Python-${version}.tar.xz \
+  && cd Python-${version} \
+  && ./configure \
+  && make \
+  && make altinstall \
+  && cd - \
+  && rm -Rf /Python-${version} \
+  && rm Python-${version}.tar.xz
 
  RUN version=3-2.4 \
   && mkdir /opt/pypy3 \
