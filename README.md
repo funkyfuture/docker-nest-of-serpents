@@ -15,7 +15,7 @@ An Ubuntu-derived image that has these interpreters installed:
     - `python3.4` (3.4.3)
     - `python3.5` (3.5.0)
   - PyPy
-    - `pypy` (2.6.1)
+    - `pypy` (4.0.0)
     - `pypy3` (2.4.0)
 
 Their sources are
