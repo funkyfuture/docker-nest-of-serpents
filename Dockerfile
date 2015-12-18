@@ -4,8 +4,8 @@ ENV PYTHONS="python2.3 python2.4 python2.5 python2.6 python2.7 python3.1 python3
 
 RUN apt-get -q update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -qy \
-        curl jupp nano vim software-properties-common \
-        gcc libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev make zlib1g-dev \
+        curl gcc git jupp nano vim software-properties-common \
+        libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev make zlib1g-dev \
  && add-apt-repository -y ppa:fkrull/deadsnakes \
  && add-apt-repository -y ppa:fkrull/deadsnakes-python2.7 \
  && add-apt-repository -y ppa:pypy/ppa \
