@@ -16,7 +16,7 @@ RUN apt-get -q update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
- RUN version=3.4.3 \
+ RUN version=3.4.4 \
   && curl -sOLS "https://www.python.org/ftp/python/${version}/Python-$version.tar.xz" \
   && tar xf Python-${version}.tar.xz \
   && cd Python-${version} \

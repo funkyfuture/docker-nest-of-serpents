@@ -39,7 +39,7 @@ You may use the `PIP_INDEX_URL` environment variable to use a
 ### Other tools
 
 These tools are installed additionally to those from the Ubuntu-image:
-`curl`, `gcc`, `jupp`, `make`, `nano` and `vim`.
+`curl`, `gcc`, `git`, `jupp`, `make`, `nano` and `vim`.
 
 Feel free to request further tools that are useful in general to be included.
 
