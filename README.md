@@ -1,5 +1,7 @@
 # Nest of serpents
 
+![image](http://i2.mirror.co.uk/incoming/article2357510.ece/ALTERNATES/s1200/The-Monty-Python-team-imitate-journalist-and-broadcaster-Alan-Whicker.jpg)
+
 An Ubuntu-derived image that has these interpreters installed:
 
   - CPython 2
