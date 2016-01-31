@@ -1,17 +1,17 @@
 FROM ubuntu
 
-ENV PYTHONS="python2.3 python2.4 python2.5 python2.6 python2.7 python3.1 python3.2 python3.3 python3.5 pypy"
-
-RUN apt-get -q update \
+RUN pythons="python2.3 python2.4 python2.5 python2.6 python2.7 python3.1 python3.2 python3.3 python3.5 pypy" \
+ && apt-get -q update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -qy \
-        curl gcc git jupp nano vim software-properties-common \
-        libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev make zlib1g-dev \
+        curl jupp nano vim software-properties-common \
+        gcc libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev make zlib1g-dev \
  && add-apt-repository -y ppa:fkrull/deadsnakes \
  && add-apt-repository -y ppa:fkrull/deadsnakes-python2.7 \
  && add-apt-repository -y ppa:pypy/ppa \
  && apt-get purge -qy software-properties-common \
  && apt-get -q update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -qy $PYTHONS \
+ && apt-get -qy upgrade \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -qy $pythons \
  && apt-get autoremove -qy \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
@@ -35,7 +35,7 @@ RUN apt-get -q update \
   && ln -s /opt/pypy3/pypy3-*/bin/pypy3 /usr/local/bin/pypy3
 
 RUN curl -OsS https://bootstrap.pypa.io/get-pip.py \
- && versions="2.6 2.7 3.2 3.3 3.4 3.5" \
+ && versions="2.6 2.7 3.3 3.4 3.5" \
  && for version in $versions; do \
       eval python$version get-pip.py && \
       mv /usr/local/bin/wheel /usr/local/bin/wheel$version; \
