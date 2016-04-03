@@ -17,15 +17,14 @@ An Ubuntu-derived image that has these interpreters installed:
     - `python3.4` (3.4.4)
     - `python3.5` (3.5.1)
   - PyPy
-    - `pypy` (4.0.1)
+    - `pypy` (5.0.1)
     - `pypy3` (2.4.0)
 
 Their sources are
 [Felix Krull's Deadsnakes PPA](https://launchpad.net/~fkrull/+archive/ubuntu/deadsnakes),
 the [Python sources](https://www.python.org/ftp/python/),
 the [PyPy developer's ppa](https://launchpad.net/~pypy/+archive/ubuntu/ppa),
-and
-[Squeaky's portable PyPy-builds](https://github.com/squeaky-pl/portable-pypy).
+and [PyPy's builds](http://pypy.org/download.html).
 
 The image is supposed to be a base for testing Python-code against historical
 and most recent interpreters. Some further tools for are on board, see below.
