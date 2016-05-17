@@ -31,8 +31,9 @@ and most recent interpreters. Some further tools for are on board, see below.
 
 ### pip
 
-The latest `pip` available at build time is installed for versions 2.6, 2.7,
-3.4, 3.4 and 3.5. Those for PyPy are called `pyp` respectively `pyp3`.
+The latest `pip` available at build time is installed for versions CPython
+2.6, 2.7,, 3.3 and onwards. Those for PyPy are called `pyp` respectively
+`pyp3`.
 
 You may use the `PIP_INDEX_URL` environment variable to use a
 [PyPI-cache](http://doc.devpi.net/latest/quickstart-pypimirror.html).
@@ -56,6 +57,8 @@ https://github.com/funkyfuture/docker-nest-of-serpents
 
 ## TODO
 
+- MD5 checks
 - add CPython 2.0, 2.1, 2.2, 3.0
+- add pyston
 - implement mechanics to link a devpi-container
 - dig out pip-versions that are compatible with 2.3, 2.4, 2.5, 3.1 and 3.2

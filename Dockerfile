@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:trusty
 
 RUN pythons="python2.3 python2.4 python2.5 python2.6 python2.7 python3.1 python3.2 python3.3 python3.5" \
  && apt-get -q update \
@@ -15,16 +15,18 @@ RUN pythons="python2.3 python2.4 python2.5 python2.6 python2.7 python3.1 python3
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
- RUN version=3.4.4 \
-  && curl -sOLS "https://www.python.org/ftp/python/${version}/Python-$version.tar.xz" \
-  && tar xf Python-${version}.tar.xz \
-  && cd Python-${version} \
-  && ./configure \
-  && make \
-  && make altinstall \
-  && cd - \
-  && rm -Rf /Python-${version} \
-  && rm Python-${version}.tar.xz
+ RUN for version in 3.4.4 3.6.0a1 ; do \
+         dir=$(echo $version | sed "s/a1$//") \
+      && curl -sOLS "https://www.python.org/ftp/python/${dir}/Python-$version.tar.xz" \
+      && tar xf Python-${version}.tar.xz \
+      && cd Python-${version} \
+      && ./configure \
+      && make \
+      && make altinstall \
+      && cd - \
+      && rm -Rf /Python-${version} \
+      && rm Python-${version}.tar.xz ; \
+    done
 
  RUN for pypy in pypy-5.0.1 pypy3-2.4.0 ; do \
        pypy_archive="${pypy}-linux64.tar.bz2" && \
@@ -38,7 +40,7 @@ RUN pythons="python2.3 python2.4 python2.5 python2.6 python2.7 python3.1 python3
      done
 
 RUN curl -OsS https://bootstrap.pypa.io/get-pip.py \
- && versions="2.6 2.7 3.3 3.4 3.5" \
+ && versions="2.6 2.7 3.3 3.4 3.5 3.6" \
  && for version in $versions; do \
       eval python$version get-pip.py && \
       mv /usr/local/bin/wheel /usr/local/bin/wheel$version; \
