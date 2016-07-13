@@ -16,9 +16,10 @@ An Ubuntu-derived image that has these interpreters installed:
     - `python3.3` (3.3.6)
     - `python3.4` (3.4.4)
     - `python3.5` (3.5.1)
+    - `python3.6` (3.6.0a1)
   - PyPy
-    - `pypy` (5.0.1)
-    - `pypy3` (2.4.0)
+    - `pypy` (5.3.1)
+    - `pypy3.3` (5.2.0-alpha1)
 
 Their sources are
 [Felix Krull's Deadsnakes PPA](https://launchpad.net/~fkrull/+archive/ubuntu/deadsnakes),
@@ -32,8 +33,8 @@ and most recent interpreters. Some further tools for are on board, see below.
 ### pip
 
 The latest `pip` available at build time is installed for versions CPython
-2.6, 2.7,, 3.3 and onwards. Those for PyPy are called `pyp` respectively
-`pyp3`.
+2.6, 2.7, 3.3 and onwards. Those for PyPy are called `pyp2` respectively
+`pyp3.2`.
 
 You may use the `PIP_INDEX_URL` environment variable to use a
 [PyPI-cache](http://doc.devpi.net/latest/quickstart-pypimirror.html).
