@@ -20,11 +20,14 @@ An Ubuntu-derived image that has these interpreters installed:
   - PyPy
     - `pypy` (5.3.1)
     - `pypy3.3` (5.2.0-alpha1)
+  - Pyston (yet w/o pip)
+    - `pyston` alias `pyston_release` (0.5.1)
+    - `pyston_dbg` (0.5.1)
 
 Their sources are
 [Felix Krull's Deadsnakes PPA](https://launchpad.net/~fkrull/+archive/ubuntu/deadsnakes),
 the [Python sources](https://www.python.org/ftp/python/),
-the [PyPy developer's ppa](https://launchpad.net/~pypy/+archive/ubuntu/ppa),
+the [Pyston sources](https://github.com/dropbox/pyston),
 and [PyPy's builds](http://pypy.org/download.html).
 
 The image is supposed to be a base for testing Python-code against historical
@@ -60,6 +63,5 @@ https://github.com/funkyfuture/docker-nest-of-serpents
 
 - MD5 checks
 - add CPython 2.0, 2.1, 2.2, 3.0
-- add pyston
 - implement mechanics to link a devpi-container
 - dig out pip-versions that are compatible with 2.3, 2.4, 2.5, 3.1 and 3.2

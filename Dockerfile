@@ -38,26 +38,30 @@ RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3
      done \
  && cd /usr/local/bin && ln -s pypy pypy2
 
-# ENV PYSTON_VERSION=0.5.1
-# RUN build_deps="automake cmake ninja-build ccache liblzma-dev libgmp3-dev libmpfr-dev autoconf libtool python-dev texlive-extra-utils clang pkg-config libbz2-dev" \
-#  && apt-get -q update \
-#  && DEBIAN_FRONTEND=noninteractive apt-get -qy install $build_deps \
-#  && cd /root \
-#  && git config --global user.name "nest-of-serpents" \
-#  && git config --global user.email "funkyfuture+nest-of-serpents@hub.docker.com" \
-#  && git clone https://github.com/dropbox/pyston.git \
-#  && git clone https://github.com/llvm-mirror/llvm.git pyston_deps/llvm-trunk \
-#  && git clone https://github.com/llvm-mirror/clang.git pyston_deps/llvm-trunk/tools/clang \
-#  && cd pyston \
-#  && git checkout v${PYSTON_VERSION} \
-#  && git submodule update --init --recursive build_deps \
-#  && make llvm_up && make && make pyston_release \
-#  && rm -rf .git* .travis.yml .vimrc.dir \
-#  && cd .. && mv pyston /opt && rm -R pyston_deps \
-#  && cd /opt/pyston && ln -s pyston* /usr/local/bin && ln -s pyston_release /usr/local/bin/pyston \
-#  && DEBIAN_FRONTEND=noninteractive apt-get -yq --purge autoremove $build_deps \
-#  && apt-get clean \
-#  && rm -rf /var/lib/apt/lists/*
+ENV PYSTON_VERSION=0.5.1
+RUN build_deps="automake cmake ninja-build ccache liblzma-dev libgmp3-dev libmpfr-dev autoconf libtool python-dev texlive-extra-utils clang pkg-config libbz2-dev" \
+ && apt-get -q update \
+ && DEBIAN_FRONTEND=noninteractive apt-get -qy install $build_deps \
+ && cd /root \
+ && git config --global user.name "nest-of-serpents" \
+ && git config --global user.email "funkyfuture+nest-of-serpents@hub.docker.com" \
+ && git clone https://github.com/dropbox/pyston.git \
+ && git clone https://github.com/llvm-mirror/llvm.git pyston_deps/llvm-trunk \
+ && git clone https://github.com/llvm-mirror/clang.git pyston_deps/llvm-trunk/tools/clang \
+ && cd pyston \
+ && git checkout v${PYSTON_VERSION} \
+ && git submodule update --init --recursive build_deps \
+ && make llvm_up && make && make pyston_release \
+ && rm -rf .git* .travis.yml .vimrc.dir \
+ && cd .. && mv pyston /opt && rm -R pyston_deps \
+ && cd /opt/pyston && rm pyston_dbg pyston_release \
+ && cd /usr/local/bin \
+ && ln -s /opt/pyston/build/Debug/pyston pyston_dbg \
+ && ln -s /opt/pyston/build/Release/pyston pyston_release \
+ && ln -s pyston_release pyston \
+ && DEBIAN_FRONTEND=noninteractive apt-get -yq --purge autoremove $build_deps \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 RUN curl -OsS https://bootstrap.pypa.io/get-pip.py \
  && versions="2.6 2.7 3.3 3.4 3.5 3.6" \
