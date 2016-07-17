@@ -2,7 +2,10 @@
 
 ![image](http://i2.mirror.co.uk/incoming/article2357510.ece/ALTERNATES/s1200/The-Monty-Python-team-imitate-journalist-and-broadcaster-Alan-Whicker.jpg)
 
-An Ubuntu-derived image that has these interpreters installed:
+This repo provides two Ubuntu-derived image that has the following interpreters installed.
+(They are distributed to different images due to limitations in the Docker hub's automated build system.)
+
+###### `funkyfuture/nest-of-serpents:latest`
 
   - CPython 2
     - `python2.3` (2.3.7)
@@ -20,6 +23,10 @@ An Ubuntu-derived image that has these interpreters installed:
   - PyPy
     - `pypy` (5.3.1)
     - `pypy3.3` (5.2.0-alpha1)
+
+###### `funkyfuture/nest-of-serpents:pyston`
+
+  - all from `:latest`
   - Pyston (yet w/o pip)
     - `pyston` alias `pyston_release` (0.5.1)
     - `pyston_dbg` (0.5.1)
