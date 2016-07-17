@@ -13,14 +13,10 @@ RUN build_deps="automake cmake libtool ninja-build pkg-config ccache clang libbz
  && cd pyston \
  && git checkout v${PYSTON_VERSION} \
  && git submodule update --init --recursive build_deps \
- && make llvm_up && make && make pyston_release \
- && rm -rf .git* .travis.yml .vimrc.dir \
- && cd .. && mv pyston /opt && rm -R pyston_deps \
- && cd /opt/pyston && rm pyston_dbg pyston_release \
- && cd /usr/local/bin \
- && ln -s /opt/pyston/build/Debug/pyston pyston_dbg \
- && ln -s /opt/pyston/build/Release/pyston pyston_release \
- && ln -s pyston_release pyston \
+ && make llvm_up && make pyston_release \
+ && mv build/Release /opt/pyston \
+ && cd .. && rm -R pyston \
+ && cd /usr/local/bin && ln -s /opt/pyston/pyston pyston \
  && DEBIAN_FRONTEND=noninteractive apt-get -yq --purge autoremove $build_deps \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
