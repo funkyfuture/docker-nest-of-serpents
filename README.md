@@ -2,7 +2,7 @@
 
 ![image](http://i2.mirror.co.uk/incoming/article2357510.ece/ALTERNATES/s1200/The-Monty-Python-team-imitate-journalist-and-broadcaster-Alan-Whicker.jpg)
 
-This repo provides two Ubuntu-derived image that has the following interpreters installed.
+This repo provides two Ubuntu-derived image that have the following interpreters installed.
 (They are distributed to different images due to limitations in the Docker hub's automated build system.)
 
 ###### `funkyfuture/nest-of-serpents:latest`
@@ -37,7 +37,7 @@ the [Python sources](https://www.python.org/ftp/python/),
 the [Pyston sources](https://github.com/dropbox/pyston),
 and [PyPy's builds](http://pypy.org/download.html).
 
-The image is supposed to be a base for testing Python-code against historical
+The images are supposed to be a base for testing Python-code against historical
 and most recent interpreters. Some further tools for are on board, see below.
 
 ### pip
