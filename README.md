@@ -28,8 +28,7 @@ This repo provides two Ubuntu-derived image that have the following interpreters
 
   - all from `:latest`
   - Pyston (yet w/o pip)
-    - `pyston` alias `pyston_release` (0.5.1)
-    - `pyston_dbg` (0.5.1)
+    - `pyston` (0.5.1)
 
 Their sources are
 [Felix Krull's Deadsnakes PPA](https://launchpad.net/~fkrull/+archive/ubuntu/deadsnakes),
