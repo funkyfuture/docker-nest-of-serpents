@@ -16,7 +16,7 @@ RUN build_deps="automake cmake libtool ninja-build pkg-config ccache clang libbz
  && make llvm_up && make pyston_release \
  && mv build/Release /opt/pyston \
  && cd .. && rm -R pyston \
- && cd /usr/local/bin && ln -s /opt/pyston/pyston pyston \
+ && ln -s /opt/pyston/pyston /usr/local/bin/pyston \
  && DEBIAN_FRONTEND=noninteractive apt-get -yq --purge autoremove $build_deps \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
