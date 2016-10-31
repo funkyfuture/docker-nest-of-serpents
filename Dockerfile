@@ -26,12 +26,13 @@ RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3
       && rm Python-${version}.tar.xz ; \
     done
 
- RUN for pypy in pypy2-v5.3.1 pypy3.3-v5.2.0-alpha1 ; do \
+ RUN for pypy in pypy2-v5.4.1 pypy3.3-v5.5.0-alpha ; do \
        pypy_archive="${pypy}-linux64.tar.bz2" && \
        pypy_name="$(echo $pypy | cut -f1 -d-)" && \
        pypy_target="/opt/${pypy_name}" && \
        curl -LOsS "https://bitbucket.org/pypy/pypy/downloads/${pypy_archive}" && \
        tar xfj $pypy_archive -C /opt && \
+       pypy=$(echo $pypy | cut -f-2 -d- | sed "s/pypy3\.3/pypy3/") && \
        mv "/opt/${pypy}-linux64" $pypy_target && \
        rm $pypy_archive && \
        ln -s ${pypy_target}/bin/pypy* /usr/local/bin ; \
