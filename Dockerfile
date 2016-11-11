@@ -3,7 +3,7 @@ FROM ubuntu:xenial
 RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3.3 python3.4" \
  && apt-get -q update \
  && DEBIAN_FRONTEND=noninteractive apt-get -qy install --no-install-recommends \
-        bzip2 curl gcc git jupp make nano vim software-properties-common time xz-utils \
+        bzip2 curl gcc git jupp less make nano vim software-properties-common time xz-utils \
         libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev \
  && add-apt-repository -y ppa:fkrull/deadsnakes \
  && apt-get -q update \
