@@ -26,7 +26,7 @@ RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3
       && rm Python-${version}.tar.xz ; \
     done
 
- RUN for pypy in pypy2-v5.4.1 pypy3.3-v5.5.0-alpha ; do \
+ RUN for pypy in pypy2-v5.6.0 pypy3.3-v5.5.0-alpha ; do \
        pypy_archive="${pypy}-linux64.tar.bz2" && \
        pypy_name="$(echo $pypy | cut -f1 -d-)" && \
        pypy_target="/opt/${pypy_name}" && \
