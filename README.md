@@ -52,7 +52,8 @@ You may use the `PIP_INDEX_URL` environment variable to use a
 ### Other tools
 
 These tools are installed additionally to those from the Ubuntu-image:
-`curl`, `gcc`, `git`, `jupp`, `less`, `make`, `nano` and `vim`.
+`bzip2`, `curl`, `gcc`, `git`, `jupp`, `less`, `make`, `nano` `time` `vim`,
+`xz` and its friends.
 
 Feel free to request further tools that are useful in general to be included.
 
