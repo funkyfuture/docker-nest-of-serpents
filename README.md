@@ -27,8 +27,8 @@ This repo provides two Ubuntu-derived image that have the following interpreters
 ###### `funkyfuture/nest-of-serpents:pyston`
 
   - all from `:latest`
-  - Pyston (yet w/o pip)
-    - `pyston` (0.5.1)
+  - Pyston
+    - `pyston` (0.6)
 
 Their sources are
 [Felix Krull's Deadsnakes PPA](https://launchpad.net/~fkrull/+archive/ubuntu/deadsnakes),
@@ -43,7 +43,8 @@ and most recent interpreters. Some further tools for are on board, see below.
 
 The latest `pip` available at build time is installed for versions CPython
 2.6, 2.7, 3.3 and onwards. Those for PyPy are called `pyp2` respectively
-`pyp3.2`.
+`pyp3.2`. For Pyston there's `pyston-pip`, note that this installs executables
+to `/opt/pyston/bin`.
 
 You may use the `PIP_INDEX_URL` environment variable to use a
 [PyPI-cache](http://doc.devpi.net/latest/quickstart-pypimirror.html).
