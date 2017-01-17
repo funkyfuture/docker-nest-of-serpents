@@ -17,8 +17,8 @@ This repo provides two Ubuntu-derived image that have the following interpreters
     - `python3.1` (3.1.5)
     - `python3.2` (3.2.6)
     - `python3.3` (3.3.6)
-    - `python3.4` (3.4.5)
-    - `python3.5` (3.5.2)
+    - `python3.4` (3.4.6)
+    - `python3.5` (3.5.3)
     - `python3.6` (3.6.0)
   - PyPy
     - `pypy` (5.6.0)

@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3.3 python3.4" \
+RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3.3" \
  && apt-get -q update \
  && DEBIAN_FRONTEND=noninteractive apt-get -qy install --no-install-recommends \
         software-properties-common \
@@ -14,7 +14,7 @@ RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
- RUN for version in 2.7.13 3.5.2 3.6.0 ; do \
+ RUN for version in 2.7.13 3.4.6 3.5.3 3.6.0 ; do \
          dir=$(echo $version | sed "s/rc[0-9]$//") \
       && curl -sOLS "https://www.python.org/ftp/python/${dir}/Python-${version}.tar.xz" \
       && tar xf Python-${version}.tar.xz \
