@@ -27,13 +27,12 @@ RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3
       && rm Python-${version}.tar.xz ; \
     done
 
- RUN for pypy in pypy2-v5.6.0 pypy3.3-v5.5.0-alpha ; do \
+ RUN for pypy in pypy2-v5.7.0 pypy3-v5.7.0 ; do \
        pypy_archive="${pypy}-linux64.tar.bz2" && \
        pypy_name="$(echo $pypy | cut -f1 -d-)" && \
        pypy_target="/opt/${pypy_name}" && \
        curl -LOsS "https://bitbucket.org/pypy/pypy/downloads/${pypy_archive}" && \
        tar xfj $pypy_archive -C /opt && \
-       pypy=$(echo $pypy | cut -f-2 -d- | sed "s/pypy3\.3/pypy3/") && \
        mv "/opt/${pypy}-linux64" $pypy_target && \
        rm $pypy_archive && \
        ln -s ${pypy_target}/bin/pypy* /usr/local/bin ; \
@@ -47,9 +46,9 @@ RUN curl -OsS https://bootstrap.pypa.io/get-pip.py \
       mv /usr/local/bin/wheel /usr/local/bin/wheel$version; \
     done \
  && pypy2 get-pip.py \
- && pypy3.3 get-pip.py \
+ && pypy3 get-pip.py \
  && rm get-pip.py \
  && cd /usr/local/bin \
-    && cp pip pyp3.3 && mv pip pyp2 && ln -s pyp2 pyp \
-    && sed -i -e 's_/usr/bin/pypy_/usr/local/bin/pypy3_g' pyp3.3 \
+    && cp pip pyp3 && mv pip pyp2 && ln -s pyp2 pyp \
+    && sed -i -e 's_/usr/bin/pypy_/usr/local/bin/pypy3_g' pyp3 \
     && rm easy_install pip2 pip3

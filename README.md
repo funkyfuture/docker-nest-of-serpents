@@ -21,12 +21,15 @@ This repo provides two Ubuntu-derived image that have the following interpreters
     - `python3.5` (3.5.3)
     - `python3.6` (3.6.0)
   - PyPy
-    - `pypy` (5.6.0)
-    - `pypy3.3` (5.5.0-alpha)
+    - `pypy2` (5.7.0)
+    - `pypy3` (5.7.0)
 
 ###### `funkyfuture/nest-of-serpents:pyston`
 
-  - all from `:latest`
+As unfortunateley the Pyston development was stopped, there will be no further builds of
+this image.
+
+  - all from `:latest` (though versions may be outdated)
   - Pyston
     - `pyston` (0.6)
 
@@ -43,7 +46,7 @@ and most recent interpreters. Some further tools for are on board, see below.
 
 The latest `pip` available at build time is installed for versions CPython
 2.6, 2.7, 3.3 and onwards. Those for PyPy are called `pyp2` respectively
-`pyp3.2`. For Pyston there's `pyston-pip`, note that this installs executables
+`pyp3`. For Pyston there's `pyston-pip`, note that this installs executables
 to `/opt/pyston/bin`.
 
 You may use the `PIP_INDEX_URL` environment variable to use a
