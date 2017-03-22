@@ -4,7 +4,7 @@ RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3
  && apt-get -q update \
  && DEBIAN_FRONTEND=noninteractive apt-get -qy install --no-install-recommends \
         software-properties-common \
-        bzip2 ca-certificates curl gcc git jupp less make nano vim time xz-utils \
+        bzip2 ca-certificates curl gcc git jupp less make nano netbase vim time xz-utils \
         libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev \
  && add-apt-repository -y ppa:fkrull/deadsnakes \
  && apt-get -q update \
@@ -52,3 +52,6 @@ RUN curl -OsS https://bootstrap.pypa.io/get-pip.py \
     && cp pip pyp3 && mv pip pyp2 && ln -s pyp2 pyp \
     && sed -i -e 's_/usr/bin/pypy_/usr/local/bin/pypy3_g' pyp3 \
     && rm easy_install pip2 pip3
+
+RUN apt-get -q update \
+ && apt-get -qy install --no-install-recommends netbase
