@@ -14,7 +14,7 @@ RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
- RUN for version in 2.7.13 3.4.6 3.5.3 3.6.0 ; do \
+ RUN for version in 2.7.13 3.4.6 3.5.3 3.6.1 ; do \
          dir=$(echo $version | sed "s/rc[0-9]$//") \
       && curl -sOLS "https://www.python.org/ftp/python/${dir}/Python-${version}.tar.xz" \
       && tar xf Python-${version}.tar.xz \
@@ -52,6 +52,3 @@ RUN curl -OsS https://bootstrap.pypa.io/get-pip.py \
     && cp pip pyp3 && mv pip pyp2 && ln -s pyp2 pyp \
     && sed -i -e 's_/usr/bin/pypy_/usr/local/bin/pypy3_g' pyp3 \
     && rm easy_install pip2 pip3
-
-RUN apt-get -q update \
- && apt-get -qy install --no-install-recommends netbase
