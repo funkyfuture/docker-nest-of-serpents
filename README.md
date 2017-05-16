@@ -19,10 +19,10 @@ This repo provides two Ubuntu-derived image that have the following interpreters
     - `python3.3` (3.3.6)
     - `python3.4` (3.4.6)
     - `python3.5` (3.5.3)
-    - `python3.6` (3.6.0)
+    - `python3.6` (3.6.1)
   - PyPy
-    - `pypy2` (5.7.0)
-    - `pypy3` (5.7.0)
+    - `pypy2` (5.7.1)
+    - `pypy3` (5.7.1)
 
 ###### `funkyfuture/nest-of-serpents:pyston`
 
