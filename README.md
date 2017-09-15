@@ -17,12 +17,12 @@ This repo provides two Ubuntu-derived image that have the following interpreters
     - `python3.1` (3.1.5)
     - `python3.2` (3.2.6)
     - `python3.3` (3.3.6)
-    - `python3.4` (3.4.6)
-    - `python3.5` (3.5.3)
-    - `python3.6` (3.6.1)
+    - `python3.4` (3.4.7)
+    - `python3.5` (3.5.4)
+    - `python3.6` (3.6.2)
   - PyPy
-    - `pypy2` (5.7.1)
-    - `pypy3` (5.7.1)
+    - `pypy2` (5.8.0)
+    - `pypy3` (5.8.0)
 
 ###### `funkyfuture/nest-of-serpents:pyston`
 
@@ -34,7 +34,7 @@ this image.
     - `pyston` (0.6)
 
 Their sources are
-[Felix Krull's Deadsnakes PPA](https://launchpad.net/~fkrull/+archive/ubuntu/deadsnakes),
+[Felix Krull's Deadsnakes PPA](https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa),
 the [Python sources](https://www.python.org/ftp/python/),
 the [Pyston sources](https://github.com/dropbox/pyston),
 and [PyPy's builds](http://pypy.org/download.html).

@@ -1,12 +1,12 @@
 FROM ubuntu:xenial
 
-RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3.3 python3.6" \
+RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3.3 python3.4 python3.5 python3.6" \
  && apt-get -q update \
  && DEBIAN_FRONTEND=noninteractive apt-get -qy install --no-install-recommends \
         software-properties-common \
         bzip2 ca-certificates curl gcc git jupp less make nano netbase vim time xz-utils \
         libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev \
- && add-apt-repository -y ppa:fkrull/deadsnakes \
+ && add-apt-repository -y ppa:deadsnakes/ppa \
  && apt-get -q update \
  && apt-get -qy upgrade \
  && DEBIAN_FRONTEND=noninteractive apt-get -qy install --no-install-recommends $pythons \
@@ -14,7 +14,7 @@ RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
- RUN for version in 2.7.13 3.4.6 3.5.3 ; do \
+RUN for version in 2.7.13 ; do \
          dir=$(echo $version | sed "s/rc[0-9]$//") \
       && curl -sOLS "https://www.python.org/ftp/python/${dir}/Python-${version}.tar.xz" \
       && tar xf Python-${version}.tar.xz \
@@ -27,7 +27,7 @@ RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3
       && rm Python-${version}.tar.xz ; \
     done
 
- RUN for pypy in pypy2-v5.7.1 pypy3-v5.7.1 ; do \
+RUN for pypy in pypy2-v5.8.0 pypy3-v5.8.0 ; do \
        pypy_archive="${pypy}-linux64.tar.bz2" && \
        pypy_name="$(echo $pypy | cut -f1 -d-)" && \
        pypy_target="/opt/${pypy_name}" && \
