@@ -12,7 +12,7 @@ This repo provides two Ubuntu-derived image that have the following interpreters
     - `python2.4` (2.4.6)
     - `python2.5` (2.5.6)
     - `python2.6` (2.6.9)
-    - `python2.7` (2.7.12)
+    - `python2.7` (2.7.14)
   - CPython 3
     - `python3.1` (3.1.5)
     - `python3.2` (3.2.6)
