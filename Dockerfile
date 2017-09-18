@@ -1,5 +1,8 @@
 FROM ubuntu:xenial
 
+ENV LC_ALL=C.UTF-8 \
+    LANG=C.UTF-8
+
 RUN pythons="python2.3 python2.4 python2.5 python2.6 python3.1 python3.2 python3.3 python3.4 python3.5 python3.6" \
  && apt-get -q update \
  && DEBIAN_FRONTEND=noninteractive apt-get -qy install --no-install-recommends \
