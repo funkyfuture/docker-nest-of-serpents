@@ -30,7 +30,7 @@ RUN for version in 2.7.14 ; do \
       && rm Python-${version}.tar.xz ; \
     done
 
-RUN for pypy in pypy2-v5.8.0 pypy3-v5.8.0 ; do \
+RUN for pypy in pypy2-v5.9.0 pypy3-v5.9.0 ; do \
        pypy_archive="${pypy}-linux64.tar.bz2" && \
        pypy_name="$(echo $pypy | cut -f1 -d-)" && \
        pypy_target="/opt/${pypy_name}" && \
