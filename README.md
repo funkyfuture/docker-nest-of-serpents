@@ -12,17 +12,17 @@ This repo provides two Ubuntu-derived image that have the following interpreters
     - `python2.4` (2.4.6)
     - `python2.5` (2.5.6)
     - `python2.6` (2.6.9)
-    - `python2.7` (2.7.14)
+    - `python2.7` (2.7.15)
   - CPython 3
     - `python3.1` (3.1.5)
     - `python3.2` (3.2.6)
     - `python3.3` (3.3.7)
     - `python3.4` (3.4.8)
-    - `python3.5` (3.5.4)
-    - `python3.6` (3.6.4)
+    - `python3.5` (3.5.5)
+    - `python3.6` (3.6.5)
   - PyPy
-    - `pypy2` (5.10.0)
-    - `pypy3` (5.10.1)
+    - `pypy2` (6.0.0)
+    - `pypy3` (6.0.0)
 
 ###### `funkyfuture/nest-of-serpents:pyston`
 
