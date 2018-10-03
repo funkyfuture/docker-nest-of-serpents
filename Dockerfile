@@ -43,7 +43,7 @@ RUN for pypy in pypy2-v6.0.0 pypy3-v6.0.0 ; do \
  && cd /usr/local/bin && ln -s pypy pypy2
 
 RUN curl -OsS https://bootstrap.pypa.io/get-pip.py \
- && versions="2.6 2.7 3.3 3.4 3.5 3.6" \
+ && versions="2.6 2.7 3.3 3.4 3.5 3.6 3.7" \
  && for version in $versions; do \
       eval python$version get-pip.py && \
       mv /usr/local/bin/wheel /usr/local/bin/wheel$version; \
