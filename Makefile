@@ -10,3 +10,7 @@ build: pull-base
 .PHONY: pull-base
 pull-base:
 	docker pull $(BASEIMAGE)
+
+.PHONY: run
+run: build
+	docker run --rm -ti $(IMAGE)

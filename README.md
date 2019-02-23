@@ -2,8 +2,9 @@
 
 ![image](http://i2.mirror.co.uk/incoming/article2357510.ece/ALTERNATES/s1200/The-Monty-Python-team-imitate-journalist-and-broadcaster-Alan-Whicker.jpg)
 
-This repo provides two Ubuntu-derived image that have the following interpreters installed.
-(They are distributed to different images due to limitations in the Docker hub's automated build system.)
+This repo provides two Ubuntu-derived image that have the following interpreters
+installed. (They are distributed to different images due to limitations in the
+Docker hub's automated build system.)
 
 ###### `funkyfuture/nest-of-serpents:latest`
 
@@ -11,32 +12,32 @@ This repo provides two Ubuntu-derived image that have the following interpreters
     - `python2.3` (2.3.7)
     - `python2.4` (2.4.6)
     - `python2.5` (2.5.6)
-    - `python2.6` (2.6.9)
-    - `python2.7` (2.7.15)
+    - `python2.6` (2.6.9) w/ `pip` 9.0.3 & `setuptools` 36.6
+    - `python2.7` (2.7.15) w/ latest `pip`, `setuptools` & `wheel`
   - CPython 3
-    - `python3.1` (3.1.5)
-    - `python3.2` (3.2.6)
-    - `python3.3` (3.3.7)
-    - `python3.4` (3.4.9)
-    - `python3.5` (3.5.6)
-    - `python3.6` (3.6.7)
-    - `python3.7` (3.7.1)
+    - `python3.1` (3.1.5) w/ `pip` 1.5.6 & `setuptools` 3.8
+    - `python3.2` (3.2.6) w/ `pip` 7.1.2 & `setuptools` 7.1
+    - `python3.3` (3.3.7) w/ `pip` 10.0.1 & `setuptools` 7.1
+    - `python3.4` (3.4.9) w/ latest `pip`, `setuptools` & `wheel`
+    - `python3.5` (3.5.6) w/ latest `pip`, `setuptools` & `wheel`
+    - `python3.6` (3.6.8) w/ latest `pip`, `setuptools` & `wheel`
+    - `python3.7` (3.7.2) w/ latest `pip`, `setuptools` & `wheel`
+    - `python3.8` (3.8.0-a1)
   - PyPy
-    - `pypy2` (6.0.0)
-    - `pypy3` (6.0.0)
+    - `pypy2.7` (7.0.0)
+    - `pypy3.5` (7.0.0)
 
 ###### `funkyfuture/nest-of-serpents:pyston`
 
-As unfortunateley the Pyston development was stopped, there will be no further builds of
-this image.
+As unfortunately the Pyston development was stopped, there will be no further
+builds of this image.
 
-  - all from `:latest` (though versions may be outdated)
+  - most from `:latest` (though versions are partly outdated)
   - Pyston
     - `pyston` (0.6)
 
 Their sources are
 [Felix Krull's Deadsnakes PPA](https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa),
-the [Python sources](https://www.python.org/ftp/python/),
 the [Pyston sources](https://github.com/dropbox/pyston),
 and [PyPy's builds](http://pypy.org/download.html).
 
@@ -45,10 +46,11 @@ and most recent interpreters. Some further tools for are on board, see below.
 
 ### pip
 
-The latest `pip` available at build time is installed for versions CPython
-2.6, 2.7, 3.3 and onwards. Those for PyPy are called `pyp2` respectively
-`pyp3`. For Pyston there's `pyston-pip`, note that this installs executables
-to `/opt/pyston/bin`.
+The scripts to invoke `pip` have the CPython interpreter's version as suffix,
+e.g. `pip2.6`, for PyPy suffix is `-pypy` followed by the version number, e.g.
+`pip-pypy2.7`.
+For Pyston there's `pyston-pip`, note that this installs executables to
+`/opt/pyston/bin`.
 
 You may use the `PIP_INDEX_URL` environment variable to use a
 [PyPI-cache](http://doc.devpi.net/latest/quickstart-pypimirror.html).
@@ -56,8 +58,8 @@ You may use the `PIP_INDEX_URL` environment variable to use a
 ### Other tools
 
 These tools are installed additionally to those from the Ubuntu-image:
-`bzip2`, `curl`, `gcc`, `git`, `jupp`, `less`, `make`, `nano` `time` `vim`,
-`xz` and its friends.
+`bzip2`, `curl`, `g++`, `gcc`, `git`, `jupp`, `less`, `make`, `nano` `time`,
+`vim`, `unzip`, `xz` and its friends.
 
 Feel free to request further tools that are useful in general to be included.
 
@@ -73,7 +75,4 @@ https://github.com/funkyfuture/docker-nest-of-serpents
 
 ## TODO
 
-- MD5 checks
 - add CPython 2.0, 2.1, 2.2, 3.0
-- implement mechanics to link a devpi-container
-- dig out pip-versions that are compatible with 2.3, 2.4, 2.5, 3.1 and 3.2
