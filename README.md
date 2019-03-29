@@ -13,7 +13,7 @@ Docker hub's automated build system.)
     - `python2.4` (2.4.6)
     - `python2.5` (2.5.6)
     - `python2.6` (2.6.9) w/ `pip` 9.0.3 & `setuptools` 36.6
-    - `python2.7` (2.7.16) w/ latest `pip`, `setuptools` & `wheel`
+    - `python2.7` (2.7.15-rc1) w/ latest `pip`, `setuptools` & `wheel`
   - CPython 3
     - `python3.1` (3.1.5) w/ `pip` 1.5.6 & `setuptools` 3.8
     - `python3.2` (3.2.6) w/ `pip` 7.1.2 & `setuptools` 7.1
