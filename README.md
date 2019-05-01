@@ -18,14 +18,15 @@ Docker hub's automated build system.)
     - `python3.1` (3.1.5) w/ `pip` 1.5.6 & `setuptools` 3.8
     - `python3.2` (3.2.6) w/ `pip` 7.1.2 & `setuptools` 7.1
     - `python3.3` (3.3.7) w/ `pip` 10.0.1 & `setuptools` 7.1
-    - `python3.4` (3.4.9) w/ latest `pip`, `setuptools` & `wheel`
-    - `python3.5` (3.5.6) w/ latest `pip`, `setuptools` & `wheel`
+    - `python3.4` (3.4.10) w/ latest `pip`, `setuptools` & `wheel`
+    - `python3.5` (3.5.7) w/ latest `pip`, `setuptools` & `wheel`
     - `python3.6` (3.6.8) w/ latest `pip`, `setuptools` & `wheel`
     - `python3.7` (3.7.3) w/ latest `pip`, `setuptools` & `wheel`
     - `python3.8` (3.8.0-a3)
   - PyPy
-    - `pypy2.7` (7.0.0)
+    - `pypy2.7` (7.1.1)
     - `pypy3.5` (7.0.0)
+    - `pypy3.6` (7.1.1)
 
 ###### `funkyfuture/nest-of-serpents:pyston`
 
@@ -47,8 +48,8 @@ and most recent interpreters. Some further tools for are on board, see below.
 ### pip
 
 The scripts to invoke `pip` have the CPython interpreter's version as suffix,
-e.g. `pip2.6`, for PyPy suffix is `-pypy` followed by the version number, e.g.
-`pip-pypy2.7`.
+e.g. `pip2.6`. For PyPy invoke it from the interpreter, e.g.
+`pypy2.7 -m pip <subcommand> […]`.
 For Pyston there's `pyston-pip`, note that this installs executables to
 `/opt/pyston/bin`.
 

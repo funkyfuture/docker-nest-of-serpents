@@ -47,6 +47,7 @@ install_latest 3.7
 
 pypy2.7 get-pip.py
 pypy3.5 get-pip.py
+pypy3.6 get-pip.py
 
 for pip_script in /opt/pypy*/bin/pip; do
   ln -s ${pip_script} /usr/local/bin/pip-${pip_script:5:7}
